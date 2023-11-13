@@ -1,0 +1,33 @@
+body{
+    background-color:#ddd;
+}
+.block {
+    height: 50px;
+    background-color: #8e44ad;
+}
+
+.inline {
+    height: 50px;
+    background-color: green;
+}
+.s1 {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+  }
+.s2 {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    display: inline-block;
+}
+nav { 
+    background-color: rgb (51, 51, 51); 
+  }
+.hero-image { 
+   width: 100%;
+}
+
+li:nth-child(1) {
+    background-color: green;
+  }

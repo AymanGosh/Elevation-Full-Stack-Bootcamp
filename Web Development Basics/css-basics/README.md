@@ -1,0 +1,1 @@
+That said, some good ones to keep in mind for styling (we’ll learn about positioning later) are: width, height, background-color, background-image, border, border-radius, box-shadow, font-size, font-family, text-align.
