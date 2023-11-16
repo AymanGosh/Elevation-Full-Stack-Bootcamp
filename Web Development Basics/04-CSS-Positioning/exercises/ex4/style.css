@@ -1,0 +1,35 @@
+#parent {
+  background-color: red;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  }
+  .child {
+  width: 100px;
+  height: 100px;
+  }
+  #child1 {
+  position: absolute;
+  background-color: blue;
+  right: 0
+  }
+  #child2 {
+  background-color: green;
+  }
+  #child3 {
+    position: absolute;
+    bottom: 0;
+    background-color:yellow;
+  }
+  #child4 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color:blueviolet;
+  }
+  #child5 {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    background-color:white;
+  }
