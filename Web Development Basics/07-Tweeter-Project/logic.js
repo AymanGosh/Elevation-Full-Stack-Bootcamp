@@ -21,15 +21,15 @@ const Tweeter = function () {
 
   const addComment = function (text, postID) {
     //_posts.findIndex(post => post.id === postID);
-    for (post of _posts) {
-      if (post.id !== postID) continue;
+    for (let p of _posts) {
+      if (p.id !== postID) continue;
       const newComment = { id: `c${commentIdCounter++}`, text: text };
-      post.comments.push(newComment);
+      p.comments.push(newComment);
     }
   };
 
   const removeComment = function (postID, commentID) {
-    for (post of _posts) {
+    for (let post of _posts) {
       if (post.id !== postID) continue;
       post.comments = post.comments.filter((c) => c.id !== commentID);
     }

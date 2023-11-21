@@ -20,6 +20,19 @@ const posts = [
       { id: "c6", text: "Haha second place what a joke." },
     ],
   },
+  {
+    text: "Nice Pic!!",
+    id: "p5",
+    comments: [
+      { id: "c11", text: "First comment on first post!" },
+      { id: "c12", text: "Second comment on first post!!" },
+      { id: "c32", text: "Third comment on first post!!!" },
+      { id: "c31", text: "4 comment on first post!!!" },
+      { id: "c34", text: "5 comment on first post!!!" },
+      { id: "c35", text: "6 comment on first post!!!" },
+      { id: "c39", text: "7 comment on first post!!!" },
+    ],
+  },
 ];
 
 // module.exports = posts;
