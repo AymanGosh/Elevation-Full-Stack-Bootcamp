@@ -1,10 +1,9 @@
 //This is the class that will manage all your APIs
-
 class APIManager {
   constructor() {
     if (!APIManager.instance) {
       // Your singleton initialization code goes here
-      this.data = {};
+      this._data = {};
       // ... other properties and methods
       APIManager.instance = this;
     }
@@ -38,12 +37,11 @@ class APIManager {
       this.saveQuote(quoteData);
       this.saveIpsum(ipsum);
       this.savePokemon(pokemon);
-      console.log(this.data.pokemon.image);
+      enableDisplayBtn();
     });
   }
 
   savePokemon(pokemonData) {
-    //console.log(pokemonData);
     const img =
       pokemonData.sprites.other.dream_world.front_default ||
       pokemonData.sprites.other.home.front_shiny ||
@@ -52,18 +50,24 @@ class APIManager {
       name: pokemonData.name,
       image: img,
     };
-    this.data.pokemon = pokemon;
+    this._data.pokemon = pokemon;
   }
+
   saveIpsum(ipsum) {
-    this.data.ipsum = ipsum[0];
+    this._data.ipsum = ipsum[0];
   }
+
   saveQuote(quoteData) {
-    this.data.quote = quoteData.quote;
+    this._data.quote = quoteData.quote;
   }
 
   saveUserData(users) {
     const userData = User.normalizeApiData(users.results);
     const user = new User(userData);
-    this.data.user = user;
+    this._data.user = user;
+  }
+
+  get data() {
+    return this._data;
   }
 }

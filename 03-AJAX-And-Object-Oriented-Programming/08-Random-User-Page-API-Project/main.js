@@ -1,8 +1,12 @@
 const apiManager = new APIManager();
 
 const loadUser = function () {
+  disableDisplayBtn();
   apiManager.fetchAll();
 };
+
 const displayUser = function () {
-  alert("display User");
+  console.log(apiManager.data);
 };
+
+disableDisplayBtn();
