@@ -11,3 +11,20 @@ const disableDisplayBtn = function () {
   $("#displayButton").css("background-color", "#DEDEDE");
   //$("#displayButton").css("color", "red");
 };
+
+const DOMElements = {
+  containers: {
+    user: $(".user-container"),
+    friends: $(".friends-container"),
+    quote: $(".quote-container"),
+    pokemon: $(".pokemon-container"),
+    aboutMe: $(".about-me-container"),
+  },
+  templates: {
+    user: $("#user-template"),
+    friends: $("#friends-template"),
+    quote: $("#quote-template"),
+    pokemon: $("#pokemon-template"),
+    aboutMe: $("#about-me-template"),
+  },
+};

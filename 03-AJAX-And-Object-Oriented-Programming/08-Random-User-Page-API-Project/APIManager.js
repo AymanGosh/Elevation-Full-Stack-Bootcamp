@@ -15,7 +15,7 @@ class APIManager {
       method: "GET",
       url: API,
       error: function (xhr, text, error) {
-        console.log(text);
+        console.log(text, error);
       },
     });
   }
@@ -26,19 +26,18 @@ class APIManager {
     const quotePromise = this.fetch(RANDOM_KANYE_QUOTE_API);
     const pokemonPromise = this.fetch(POKE_API + randomNumber);
     const ipsumPromise = this.fetch(BACON_IPSUM_API);
-    Promise.all([
-      usersPromise,
-      quotePromise,
-      pokemonPromise,
-      ipsumPromise,
-    ]).then((promiseResults) => {
-      let [users, quoteData, pokemon, ipsum] = promiseResults;
-      this.saveUserData(users);
-      this.saveQuote(quoteData);
-      this.saveIpsum(ipsum);
-      this.savePokemon(pokemon);
-      enableDisplayBtn();
-    });
+    Promise.all([usersPromise, quotePromise, pokemonPromise, ipsumPromise])
+      .then((promiseResults) => {
+        let [users, quoteData, pokemon, ipsum] = promiseResults;
+        this.saveUserData(users);
+        this.saveQuote(quoteData);
+        this.saveIpsum(ipsum);
+        this.savePokemon(pokemon);
+        enableDisplayBtn();
+      })
+      .catch((error) => {
+        console.error("Error fetching data from API:", error);
+      });
   }
 
   savePokemon(pokemonData) {

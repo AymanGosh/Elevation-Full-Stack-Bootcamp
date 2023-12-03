@@ -1,12 +1,13 @@
 const apiManager = new APIManager();
-
+const renderer = new Renderer();
 const loadUser = function () {
   disableDisplayBtn();
   apiManager.fetchAll();
 };
 
 const displayUser = function () {
-  console.log(apiManager.data);
+  renderer.empty();
+  renderer.render(apiManager.data);
 };
 
 disableDisplayBtn();
