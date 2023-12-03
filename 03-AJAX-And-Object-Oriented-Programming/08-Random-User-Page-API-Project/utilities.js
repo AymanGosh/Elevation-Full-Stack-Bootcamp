@@ -1,17 +1,3 @@
-const enableDisplayBtn = function () {
-  $("#displayButton").prop("disabled", false);
-  $("#displayButton").css("cursor", "pointer");
-  $("#displayButton").css("background-color", "#27ae60");
-  //$("#displayButton").css("color", "#ecf0f1");
-};
-
-const disableDisplayBtn = function () {
-  $("#displayButton").prop("disabled", true);
-  $("#displayButton").css("cursor", "not-allowed");
-  $("#displayButton").css("background-color", "#DEDEDE");
-  //$("#displayButton").css("color", "red");
-};
-
 const DOMElements = {
   containers: {
     user: $(".user-container"),
@@ -27,4 +13,19 @@ const DOMElements = {
     pokemon: $("#pokemon-template"),
     aboutMe: $("#about-me-template"),
   },
+  buttons: {
+    displayButton: $("#displayButton"),
+  },
+};
+
+const enableDisplayBtn = function () {
+  DOMElements.buttons.displayButton.prop("disabled", false);
+  DOMElements.buttons.displayButton.css("cursor", "pointer");
+  DOMElements.buttons.displayButton.css("background-color", CSS_COLORS.green);
+};
+
+const disableDisplayBtn = function () {
+  DOMElements.buttons.displayButton.prop("disabled", true);
+  DOMElements.buttons.displayButton.css("cursor", "not-allowed");
+  DOMElements.buttons.displayButton.css("background-color", CSS_COLORS.gray);
 };
