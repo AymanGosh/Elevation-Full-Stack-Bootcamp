@@ -19,7 +19,7 @@ app.get("/sale", function (req, res) {
     res.send(store);
   }
   const MIN_ITEMS = 10;
-
+  // deep copy
   let arrayCopy = JSON.parse(JSON.stringify(store));
   arrayCopy.map((item) => {
     if (item.inventory >= MIN_ITEMS && isAdmin) {
