@@ -22,7 +22,7 @@ app.get("/sale", function (req, res) {
   // deep copy
   let arrayCopy = JSON.parse(JSON.stringify(store));
   arrayCopy.map((item) => {
-    if (item.inventory >= MIN_ITEMS && isAdmin) {
+    if (item.inventory >= MIN_ITEMS) {
       item.price /= 2;
     }
     return item;
