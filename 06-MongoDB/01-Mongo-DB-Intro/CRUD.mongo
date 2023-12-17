@@ -1,0 +1,135 @@
+//db.firstCollection.find({});
+//db.firstCollection.insert({ name: "You" });
+
+// db.firstCollection.insert({
+//   name: "Razu",
+//   hometown: {
+//     city: "Razuville",
+//     country: "Razuland",
+//   },
+//   hobbies: ["Razu-ing", "Razu Surfing", "Razu Cooking"],
+// });
+
+db.firstCollection.find({});
+
+//We could, of course, store data with our own ID, like so:
+// db.firstCollection.insert({
+//     _id: 99143,
+//     name: "Shoobert"
+// })
+
+// db.firstCollection.insert({
+//     currentBalance: 4200,
+//     accountDetails:{
+//         fullname: "Douglas Adams",
+//         accountNumber: 800112338
+//     }
+// })
+
+/*************************** */
+/*
+db.firstCollection.insert({ name: "Louise", salary: 1200 });
+db.firstCollection.insert({ name: "Rayna", salary: 2300 });
+db.firstCollection.insert({ name: "Soren", salary: 1500 });
+db.firstCollection.insert({ name: "Loreli", salary: 800 });
+db.firstCollection.insert({ name: "Milo", salary: 950 });
+db.firstCollection.insert({ name: "Brendon", salary: 1100 });
+*/
+
+/*
+db.firstCollection.find({
+  name: "Milo",
+});
+*/
+
+// db.firstCollection.find({
+//   salary: {
+//     $gt: 1200,
+//   },
+// });
+/****************************** */
+
+// db.firstCollection.find(
+//   //query starts here
+//   {
+//     //filter starts here
+//     salary: {
+//       $gt: 1200,
+//     },
+//   }, //filter ends here
+//   {
+//     //projection starts here
+//     name: 1,
+//     _id: 0,
+//   } //projection ends here
+// ); //query ends here
+//In the above, we’re stating that we only want to receive
+// the name field (so we give it a value of 1) - but, by default
+// the _id field always returns, even if we have a projection. If
+// you really want to avoid this field, you can do as we did above,
+//  and explicitly give it a value of 0 in the projection.
+
+/********************************************* */
+db.firstCollection.find(
+  {
+    name: "Razu",
+  },
+  {
+    "hometown.city": 1, //notice the dot notation - when we do this, we have to wrap the key in quotes
+  }
+);
+/****************************************** */
+
+//CRUD - Update
+
+/*
+To update an existing document, we can use the .update command - 
+however, if we run it simply this will overwrite the entire document:
+*/
+db.firstCollection.update(
+  {
+    name: "Milo", //filter
+  },
+  {
+    lastName: "Shakers", //update
+  }
+);
+/*
+Sometimes we do want to overwrite the entire doc, 
+but in the above case this would be a mistake. We want to add 
+the last name, not erase the whole document.
+To make sure we’re adding (or updating an existing field)
+ without deleting everything else, we must also use $set, 
+ like so:
+ */
+db.firstCollection.update(
+  {
+    name: "Milo",
+  },
+  {
+    $set: {
+      lastName: "Shakers",
+    },
+  }
+);
+//Now when we query for “Milo” we’ll see that he also has a last name of "Shakers".
+
+/****************************************** */
+
+//CRUD - Delete
+
+db.firstCollection.deleteOne({
+  name: "Rayna",
+});
+
+/* 
+This is fine sometimes, 
+but if for whatever reason you only 
+want to delete the first occurence, 
+use the second (optional) parameter: 
+a true that indicates Mongo should only 
+delete one doc, not all matching docs:
+*/
+db.firstCollection.deleteOne({
+  name: "Rayna",
+});
