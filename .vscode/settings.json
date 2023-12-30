@@ -1,3 +1,17 @@
 {
-    "mdb.shell": "mongo"
+    "mdb.shell": "mongo",
+    "mongo.shell.path": "C:\\Program Files\\MongoDB\\Server\\7.0\\bin\\mongod",
+    "cosmosDB.documentLabelFields": [
+        
+
+        "name",
+        "Name",
+        "NAME",
+        "ID",
+        "UUID",
+        "Id",
+        "id",
+        "_id",
+        "uuid"
+    ]
 }

@@ -1,4 +1,4 @@
-this.count = "global scope";
+this.count = "Hello from global scope";
 /************************************** */
 let x = {
   count: 12,
@@ -7,9 +7,8 @@ let x = {
       console.log(this.count);
     }, 1500);
   },
-};
+}; //Hello from global scope
 //x.go();
-//global scope
 
 //ex2.1
 let x2 = {
@@ -19,9 +18,8 @@ let x2 = {
       console.log(this.count);
     }, 1500);
   },
-};
+}; // 12
 //x2.go();
-// 12
 
 //ex2.2
 let x3 = {
@@ -31,9 +29,8 @@ let x3 = {
       console.log(this.count);
     }, 1500);
   },
-};
+}; //undefined
 //x3.go();
-//undefined
 
 //ex2.3
 let x4 = {
@@ -43,6 +40,5 @@ let x4 = {
       console.log(this.count);
     }, 1500);
   },
-};
+}; //undefined
 x4.go();
-//undefined
