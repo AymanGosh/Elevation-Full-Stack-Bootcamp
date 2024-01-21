@@ -5,5 +5,7 @@ const calcCircleArea = function (radius) {
   return pi * radius * radius;
 };
 
-module.exports.pi = pi;
-module.exports.calcCircleArea = calcCircleArea;
+// module.exports.pi = pi;
+// module.exports.calcCircleArea = calcCircleArea;
+
+module.exports = { pi, calcCircleArea };

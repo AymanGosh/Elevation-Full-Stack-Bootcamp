@@ -16,4 +16,4 @@ function handleComplaints(complaint) {
   }
 }
 
-module.exports = handleComplaints;
+module.exports = { handleComplaints };
