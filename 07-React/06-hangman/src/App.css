@@ -1,0 +1,8 @@
+.disable{
+  text-decoration-line: line-through;
+  margin: 5px;
+}
+
+.enable{
+  margin: 5px;
+}
