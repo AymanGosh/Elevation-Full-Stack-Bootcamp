@@ -1,8 +1,11 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-function MovieDetail() {
+function MovieDetail({getCategoryData}) {
+    const{id} = useParams();
+    const movieDetail=getCategoryData("catalog")[id];
     return (
-        <>MovieDetail</>
+        <>{movieDetail.title}</>
     )
 }
 

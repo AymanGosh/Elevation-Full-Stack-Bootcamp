@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function Landing() {
     return (
-        <>Landing
-          <Link  to={"/Catalog"}>
+        <>
+          <Link  to={"/catalog"}>
           User1
         </Link>
         </>

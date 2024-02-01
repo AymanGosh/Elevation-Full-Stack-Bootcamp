@@ -1,8 +1,13 @@
 import React from 'react'
+import Movies from './Movies'
 
-function Catalog() {
+function Catalog({getCategoryData}) {
     return (
-        <>Catalog</>
+        <div>
+            Catalog
+            <Movies movies={getCategoryData("catalog")}/>
+        </div>
+       
     )
 }
 

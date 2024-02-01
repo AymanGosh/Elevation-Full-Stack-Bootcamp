@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Movie() {
+function Movie({movie}) {
+
     return (
-        <>Movie</>
+        <>        
+        <img src={movie.img}/>         
+        </>
     )
 }
 
