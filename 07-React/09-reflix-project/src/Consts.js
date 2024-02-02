@@ -1,7 +1,7 @@
 export const MOVIES_DATA = [
   {
     id: 0,
-    isRented: true,
+    isRented: false,
     title: "Tarzan",
     year: 1999,
     img: "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
