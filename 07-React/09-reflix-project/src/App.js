@@ -6,6 +6,8 @@ import Catalog from "./components/Catalog";
 import { MOVIES_DATA } from "./Consts";
 import { useState } from "react";
 import MovieDetail from "./components/MovieDetail";
+import Navbar from "./components/Navbar";
+
 function App() {
   const [catalog, setCatalog] = useState(MOVIES_DATA);
 
@@ -13,17 +15,13 @@ function App() {
     catalog: catalog,
     setCatalog: setCatalog,
   };
-
   const getCategoryData = (category) => {
     return STATE_MAP[category];
   };
+
   return (
     <Router>
-      <nav>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/catalog"}>Catlog</Link>
-      </nav>
-
+      <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route
