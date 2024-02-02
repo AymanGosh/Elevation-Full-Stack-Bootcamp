@@ -1,0 +1,11 @@
+.buttonOverlay {
+ 
+    transform: translate(-200%, -700%);
+    background-color: white;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+  }

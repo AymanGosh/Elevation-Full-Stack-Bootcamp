@@ -1,17 +1,21 @@
-import React from 'react'
-import Movie from './Movie'
-import { Link } from 'react-router-dom'
+import React from "react";
+import Movie from "./Movie";
 
-function Movies({movies}) {
-     return (
-        <>
-        {movies.map((m,index)=>{
-            return (
-            <Link  key={index} to={`/movies/${index}`}>
-            <Movie key={index} movie={m}/>
-            </Link>)
-        })}</>
-    )
+function Movies({ movies, getCategoryData }) {
+  return (
+    <>
+      {movies.map((m, index) => {
+        return (
+          <Movie
+            key={index}
+            index={index}
+            movie={m}
+            getCategoryData={getCategoryData}
+          />
+        );
+      })}
+    </>
+  );
 }
 
-export default Movies
+export default Movies;
