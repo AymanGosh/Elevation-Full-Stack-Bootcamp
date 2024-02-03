@@ -7,9 +7,12 @@ import { MOVIES_DATA } from "./Consts";
 import { useState } from "react";
 import MovieDetail from "./components/MovieDetail";
 import Navbar from "./components/Navbar";
+import { addNewProperty } from "./utilities";
 
 function App() {
-  const [catalog, setCatalog] = useState(MOVIES_DATA);
+  const [catalog, setCatalog] = useState(
+    addNewProperty(MOVIES_DATA, "isSearched", true)
+  );
 
   const STATE_MAP = {
     catalog: catalog,
